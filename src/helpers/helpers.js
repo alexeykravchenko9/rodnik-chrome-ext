@@ -5,6 +5,22 @@ export const getParamUrlVal = (nameParam) => {
     return text[text.length - 1];
 };
 
-export const clearLocalStorage = () => {
-    return localStorage.clear();
-}
+export const clearLocalStorage = (tags) => {
+
+
+
+    // let datepickerBtn = document.querySelectorAll('#datepicker span.btn');
+    // let selectBtn = document.getElementById('dateRangePreset');
+    //
+    //
+    // console.log(Object.keys(datepickerBtn), 'Datepicker');
+    // console.log(Object.keys(selectBtn), 'Select');
+    //
+    // selectBtn.addEventListener('change', () =>  window.localStorage.clear());
+    //
+    // datepickerBtn[0].addEventListener('click', () =>  window.localStorage.clear());
+
+
+    return console.log(tags);
+};
+

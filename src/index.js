@@ -1,15 +1,18 @@
 import Controller from './controller';
 
-// let contr = new Controller('Test class');
-// let dataTable = document.querySelectorAll('.operations-table tbody tr');
+export const EVENTTAGS = {
+    tags: '#datepicker span.btn',
+    id: ['dateRangePreset', 'locationSelect', 'operationTypeSelect']
+};
+
+
+const general = new Controller();
 
 if( document.querySelectorAll('.operations-table tbody tr').length > 0 ){
- 
-    Controller.init();
+    general.init();
 } else {
     window.localStorage.clear();
 }
-// console.log(`Test config ${1+2}`);
 
 //
 // (function(){

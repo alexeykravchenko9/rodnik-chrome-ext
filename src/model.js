@@ -37,7 +37,6 @@ class Model{
         return obj;
     }
 
-
 }
 
 export default Model;

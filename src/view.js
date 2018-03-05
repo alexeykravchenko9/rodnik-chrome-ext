@@ -1,4 +1,4 @@
-import { getParamUrlVal, clearLocalStorage } from './helpers/helpers';
+import { getParamUrlVal } from './helpers/helpers';
 
 class View {
     constructor(){
@@ -21,18 +21,13 @@ class View {
             currentPage: (pageNum[pageNum.length - 1].indexOf('page') >= 0 ) ? pageNum[pageNum.length - 1] : 'page=1'
         };
 
-
-
-
         let thHtmlElements = document.querySelectorAll('.operations-table thead tr th');
         let trHtmlElements = document.querySelectorAll('.operations-table tbody tr');
-
 
         Object.keys(thHtmlElements).forEach( (item, index) => titles.push(thHtmlElements[index].innerText) );
 
         const indexSavinings = titles.indexOf('Скидка, грн');
         const indexSumm = titles.indexOf('Сумма');
-
 
         Object.keys(trHtmlElements).forEach( (item, index) => {
 
@@ -54,13 +49,9 @@ class View {
         console.log(`Суммарная скидка - ${allSavinings} грн`);
         console.log(data);
 
-
         return data;
 
-
     }
-
-
 
     static printHtml(data){
 
@@ -80,6 +71,5 @@ class View {
     }
 
 }
-
 
 export default View;
