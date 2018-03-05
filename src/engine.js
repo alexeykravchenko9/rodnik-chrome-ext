@@ -10,8 +10,6 @@
     let thHtmlElements = document.querySelectorAll('.operations-table thead tr th');
     let trHtmlElements = document.querySelectorAll('.operations-table tbody tr');
 
-    console.log( thHtmlElements );
-
     Object.keys(thHtmlElements).forEach( (item, index) => titles.push(thHtmlElements[index].innerText) );
 
     const indexSavinings = titles.indexOf('Скидка, грн');
