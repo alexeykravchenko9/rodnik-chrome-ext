@@ -11,15 +11,28 @@ export default class Controller {
 
     static init(){
 
+        console.log(getParamUrlVal('page'));
 
         let localStorageData = Model.getFromStorage(`rodnik-ext-page=${getParamUrlVal('page')}`);
+        console.log(localStorageData);
 
         if(localStorageData === null){
             let data = View.getDataTab();
+
+            // Model.addCountSumm(`rodnik-ext-page=${getParamUrlVal('page')}`);
+
+            Model.addToStorage(data, `rodnik-ext-page=${getParamUrlVal('page')}`);
+
+
+            View.printHtml( Model.getFromStorage(`rodnik-ext-page=${getParamUrlVal('page')}`) );
+
+
+
         } else {
             View.printHtml(localStorageData);
-            Model.addToStorage(data, `rodnik-ext-page=${getParamUrlVal('page')}`);
+
         }
+
 
 
 

@@ -10,7 +10,7 @@ class View {
         let titles = [];
 
         let pageNum = window.location.href.split('&');
-  
+
         let data = {
             summ_page: 0,
             savinings: 0,
@@ -62,6 +62,8 @@ class View {
 
 
     static printHtml(data){
+
+
 
         const div = document.createElement('div');
         div.className = 'b-rodnikStats-bar';
