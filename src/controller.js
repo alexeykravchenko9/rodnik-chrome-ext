@@ -1,18 +1,18 @@
 import View from './view';
 import Model from './model';
 import { getParamUrlVal, clearLocalStorage } from './helpers/helpers';
-import { EVENTTAGS } from './index';
+// import { EVENTTAGS } from './index';
 
 export default class Controller {
     constructor(){
 
     }
 
-    init(){
+    static init(){
 
         let localStorageData = Model.getFromStorage(`rodnik-ext-page=${getParamUrlVal('page')}`);
 
-        if(this.localStorageData === null){
+        if(localStorageData === null){
             let data = View.getDataTab();
 
             Model.addToStorage(data, `rodnik-ext-page=${getParamUrlVal('page')}`);
@@ -23,8 +23,8 @@ export default class Controller {
             View.printHtml(localStorageData);
         }
 
-        clearLocalStorage(EVENTTAGS);
- 
+        //clearLocalStorage(EVENTTAGS);
+
     }
 
 }

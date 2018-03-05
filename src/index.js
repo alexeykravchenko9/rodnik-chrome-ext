@@ -1,15 +1,12 @@
 import Controller from './controller';
-
-export const EVENTTAGS = {
-    tags: '#datepicker span.btn',
-    id: ['dateRangePreset', 'locationSelect', 'operationTypeSelect']
-};
-
-
-const general = new Controller();
+//
+// export const EVENTTAGS = {
+//     tags: '#datepicker span.btn',
+//     id: ['dateRangePreset', 'locationSelect', 'operationTypeSelect']
+// };
 
 if( document.querySelectorAll('.operations-table tbody tr').length > 0 ){
-    general.init();
+    Controller.init();
 } else {
     window.localStorage.clear();
 }
