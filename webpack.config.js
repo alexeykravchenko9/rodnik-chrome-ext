@@ -10,7 +10,7 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         publicPath: '/',
-        port: 3032
+        port: 3033
     },
 
     watch: true,

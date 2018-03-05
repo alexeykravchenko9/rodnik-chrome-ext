@@ -1,4 +1,5 @@
 import Controller from './controller';
+import axios from 'axios';
 //
 // export const EVENTTAGS = {
 //     tags: '#datepicker span.btn',
@@ -10,6 +11,20 @@ if( document.querySelectorAll('.operations-table tbody tr').length > 0 ){
 } else {
     window.localStorage.clear();
 }
+
+
+// Version 2 with Parsing
+// axios.get( window.location.href )
+//     .then(function (response) {
+//         document.getElementById('rodnik-container').innerHTML = response.data;
+//
+//         console.log(response.data);
+//     })
+//     .catch(function (error) {
+//         console.log(error);
+//     });
+
+
 
 //
 // (function(){

@@ -60,6 +60,7 @@ class View {
 
         const div = document.createElement('div');
         div.className = 'b-rodnikStats-bar';
+        div.id = 'rodnik-container';
         div.innerHTML = `<p>Общая сумма - ${allSumm} грн</p>
                          <p>Суммарная скидка - ${allSavinigs} грн</p>`;
 
