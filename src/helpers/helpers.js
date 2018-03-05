@@ -5,3 +5,6 @@ export const getParamUrlVal = (nameParam) => {
     return text[text.length - 1];
 };
 
+export const clearLocalStorage = () => {
+    return localStorage.clear();
+}

@@ -1,4 +1,4 @@
-import { getParamUrlVal } from './helpers/helpers';
+import { getParamUrlVal, clearLocalStorage } from './helpers/helpers';
 
 class View {
     constructor(){
@@ -26,6 +26,7 @@ class View {
 
         let thHtmlElements = document.querySelectorAll('.operations-table thead tr th');
         let trHtmlElements = document.querySelectorAll('.operations-table tbody tr');
+
 
         Object.keys(thHtmlElements).forEach( (item, index) => titles.push(thHtmlElements[index].innerText) );
 
@@ -63,14 +64,13 @@ class View {
 
     static printHtml(data){
 
-
+        let allSavinigs = parseInt(localStorage.getItem('rodnik-ext-allSavinigs'));
+        let allSumm = parseInt(localStorage.getItem('rodnik-ext-allSumm'));
 
         const div = document.createElement('div');
         div.className = 'b-rodnikStats-bar';
-        div.innerHTML = `<p>Сумма - ${data.summ_page} грн</p>
-                         <p>Скидка - ${data.savinings} грн</p>
-                         <p>Общая сумма - ${data.allSumm} грн</p>
-                         <p>Суммарная скидка - ${data.allSavinings} грн</p>`;
+        div.innerHTML = `<p>Общая сумма - ${allSumm} грн</p>
+                         <p>Суммарная скидка - ${allSavinigs} грн</p>`;
 
         const parentDocument = document.querySelector('table.operations-table').parentNode;
         const table = document.querySelector('table.operations-table');

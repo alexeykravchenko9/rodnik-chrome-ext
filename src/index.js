@@ -1,9 +1,14 @@
 import Controller from './controller';
 
 // let contr = new Controller('Test class');
+// let dataTable = document.querySelectorAll('.operations-table tbody tr');
 
-Controller.init();
-
+if( document.querySelectorAll('.operations-table tbody tr').length > 0 ){
+ 
+    Controller.init();
+} else {
+    window.localStorage.clear();
+}
 // console.log(`Test config ${1+2}`);
 
 //

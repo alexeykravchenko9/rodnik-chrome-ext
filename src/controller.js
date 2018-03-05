@@ -11,8 +11,6 @@ export default class Controller {
 
     static init(){
 
-        console.log(getParamUrlVal('page'));
-
         let localStorageData = Model.getFromStorage(`rodnik-ext-page=${getParamUrlVal('page')}`);
         console.log(localStorageData);
 

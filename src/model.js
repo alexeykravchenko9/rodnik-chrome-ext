@@ -5,19 +5,24 @@ class Model{
 
     static addToStorage(data, key){
 
-        let localObj = {};
+        const { savinings, summ_page } = data;
 
-        for(let i = 1; i <= localStorage.length; i++){
-            localObj[i] = (JSON.parse(localStorage.getItem(`rodnik-ext-page=${i}`)));
+
+        if( localStorage.getItem('rodnik-ext-allSavinigs') !== null && localStorage.getItem('rodnik-ext-allSumm') !== null){
+
+            let allSavinigs = parseInt(localStorage.getItem('rodnik-ext-allSavinigs'));
+            let allSumm = parseInt(localStorage.getItem('rodnik-ext-allSumm'));
+
+            localStorage.setItem('rodnik-ext-allSavinigs', allSavinigs += savinings );
+            localStorage.setItem('rodnik-ext-allSumm', allSumm += summ_page );
+
+
+        } else {
+
+            localStorage.setItem('rodnik-ext-allSavinigs', savinings);
+            localStorage.setItem('rodnik-ext-allSumm', summ_page);
+
         }
-        console.log('addToStorage', localObj);
-
-        Object.keys(localObj).forEach( (item) => {
-            data.allSavinings += localObj[item].savinings;
-            data.allSumm += localObj[item].summ_page;
-
-        });
-
 
         const serialObj = JSON.stringify(data);
 
@@ -32,25 +37,7 @@ class Model{
         return obj;
     }
 
-    // static addCountSumm(local_id){
-    //
-    //     if(local_id == null){
-    //
-    //     let localObj = {};
-    //
-    //     for(let i = 1; i <= localStorage.length; i++){
-    //         localObj[i] = (JSON.parse(localStorage.getItem(`rodnik-ext-page=${i}`)));
-    //     }
-    //     console.log(localObj);
-    //
-    //     Object.keys(localObj).forEach( (item) => data.allSavinings += localObj[item].savinings );
-    //     Object.keys(localObj).forEach( (item) => data.allSumm += localObj[item].summ_page );
-    //
-    //     }
-    //
-    //
-    //     return report;
-    // }
+
 }
 
 export default Model;
