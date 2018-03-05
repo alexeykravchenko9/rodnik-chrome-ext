@@ -1,32 +1,32 @@
 import View from './view';
 import Model from './model';
+import { getParamUrlVal } from './helpers/helpers';
+
 
 export default class Controller {
     constructor(name){
         this.name = name;
+
     }
 
+    static init(){
 
 
-    static view(){
-        const { host, pathname } = window.location;
+        let localStorageData = Model.getFromStorage(`rodnik-ext-page=${getParamUrlVal('page')}`);
 
-        if(host === 'my.rodnik.ua' && pathname == '/operations'){
-
+        if(localStorageData === null){
             let data = View.getDataTab();
-
-            View.printHtml(data);
-
         } else {
-            console.log('Please, move to the Operations page.');
+            View.printHtml(localStorageData);
+            Model.addToStorage(data, `rodnik-ext-page=${getParamUrlVal('page')}`);
         }
 
 
+
+
+
+
+
     }
-
-    static model(){
-
-    }
-
 
 }

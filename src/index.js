@@ -2,7 +2,7 @@ import Controller from './controller';
 
 // let contr = new Controller('Test class');
 
-Controller.view();
+Controller.init();
 
 // console.log(`Test config ${1+2}`);
 
