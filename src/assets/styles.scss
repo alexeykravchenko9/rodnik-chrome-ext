@@ -1,0 +1,23 @@
+@import "general";
+
+.b-rodnikStats-bar{
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  padding: 10px;
+  background: rgba(110, 255, 1, 0.22);
+  color: #000;
+  border: 1px #4fd60b solid;
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+
+  p{
+    margin-bottom: 0;
+    &:last-child{
+      margin-left: 20px;
+    }
+  }
+}

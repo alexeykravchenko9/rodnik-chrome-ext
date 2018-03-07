@@ -62,8 +62,8 @@ class View {
         const div = document.createElement('div');
         div.className = 'b-rodnikStats-bar';
         div.id = 'rodnik-container';
-        div.innerHTML = `<p>Общая сумма - ${allSumm} грн</p>
-                         <p>Суммарная скидка - ${allSavinigs} грн</p>`;
+        div.innerHTML = `<p>Общая сумма: ${allSumm} грн</p>
+                         <p>Суммарная скидка: ${allSavinigs} грн</p>`;
 
         const parentDocument = document.querySelector('table.operations-table').parentNode;
         const table = document.querySelector('table.operations-table');

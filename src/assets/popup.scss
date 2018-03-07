@@ -1,0 +1,96 @@
+// Styles for rodnik popup
+
+@import "general";
+
+body, html{
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+a{
+  color: #006bf9;
+}
+
+.b-rodnik-popup{
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #020202;
+  width: 320px;
+  box-sizing: border-box;
+  padding: 10px 20px 20px;
+  line-height: 150%;
+
+  h1{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    color: #ff7a00;
+  }
+
+  strong{
+    font-weight: 700;
+  }
+
+}
+
+.b-rodnik-popup-desc{
+  margin-bottom: 10px;
+}
+
+.b-rodnik-popup-status{
+  h4{
+    margin-bottom: 20px;
+    span{
+      margin-left: 10px;
+    }
+  }
+
+  &--active{
+    color: #0ace0a;
+    font-size: 16px;
+  }
+
+  .b-rodnik-popup-require{
+      margin-bottom: 20px;
+
+      span{
+        width: 15%;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-right: 5%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      p{
+        display: inline-block;
+        vertical-align: middle;
+        width: 75%;
+        margin: 0;
+      }
+
+      &--active{
+        background: url("img/activated.svg");
+        color: #0cce30;
+
+      }
+
+      &--disable{
+        background: url("img/disabled.svg");
+        color: #e20606;
+      }
+
+
+  }
+
+
+
+
+
+
+}
+

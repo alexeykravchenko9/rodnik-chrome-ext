@@ -1,4 +1,6 @@
 import Controller from './controller';
+import './assets/styles.scss';
+
 // import axios from 'axios';
 
 if( document.querySelectorAll('.operations-table tbody tr').length > 0 ){
@@ -6,7 +8,6 @@ if( document.querySelectorAll('.operations-table tbody tr').length > 0 ){
 } else {
     window.localStorage.clear();
 }
-
 
 // Version 2 with Parsing
 // axios.get( window.location.href )
@@ -20,8 +21,6 @@ if( document.querySelectorAll('.operations-table tbody tr').length > 0 ){
 //     });
 
 
-
-//
 // (function(){
 //
 //
