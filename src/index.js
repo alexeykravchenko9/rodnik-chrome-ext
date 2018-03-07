@@ -1,10 +1,5 @@
 import Controller from './controller';
-import axios from 'axios';
-//
-// export const EVENTTAGS = {
-//     tags: '#datepicker span.btn',
-//     id: ['dateRangePreset', 'locationSelect', 'operationTypeSelect']
-// };
+// import axios from 'axios';
 
 if( document.querySelectorAll('.operations-table tbody tr').length > 0 ){
     Controller.init();

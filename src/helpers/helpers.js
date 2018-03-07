@@ -1,26 +1,46 @@
 export const getParamUrlVal = (nameParam) => {
-    let paramArr = window.location.href.split('&').filter( (item) => (item.indexOf(nameParam) >= 0) ? item : '' );
+    let paramArr = window.location.href.split('&').filter( (item) => (item.indexOf(nameParam) >= 0 ) ? item : '' );
+
     let text = paramArr.toString().split('=');
 
     return text[text.length - 1];
 };
 
-export const clearLocalStorage = (tags) => {
+export const getPageNum = () => {
+    let newPageNum = document.querySelectorAll('.pagination li.active a');
+    return newPageNum[0].innerHTML;
+}
+
+export const clearLocalStorage = (elements) => {
+
+    if( Object.keys(elements).length > 0 ){
+
+        for( let key in elements){
+
+            if( elements.hasOwnProperty(key)) {
+
+                if(elements[key].split(' ').length > 1){
+
+                    let selectorAll = document.querySelectorAll(elements[key]);
+
+                    selectorAll[0].addEventListener('click', () =>  window.localStorage.clear());
 
 
+                } else {
 
-    // let datepickerBtn = document.querySelectorAll('#datepicker span.btn');
-    // let selectBtn = document.getElementById('dateRangePreset');
-    //
-    //
-    // console.log(Object.keys(datepickerBtn), 'Datepicker');
-    // console.log(Object.keys(selectBtn), 'Select');
-    //
-    // selectBtn.addEventListener('change', () =>  window.localStorage.clear());
-    //
-    // datepickerBtn[0].addEventListener('click', () =>  window.localStorage.clear());
+                    let elementByID = document.getElementById(elements[key]);
 
+                    elementByID.addEventListener('change', () =>  window.localStorage.clear());
 
-    return console.log(tags);
+                }
+
+            }
+        }
+
+    } else {
+        throw new Error("Params aren't is object");
+    }
+
+    return console.log(elements);
 };
 

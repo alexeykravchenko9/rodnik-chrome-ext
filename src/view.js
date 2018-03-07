@@ -1,4 +1,4 @@
-import { getParamUrlVal } from './helpers/helpers';
+import { getParamUrlVal, getPageNum } from './helpers/helpers';
 
 class View {
     constructor(){
@@ -9,7 +9,8 @@ class View {
 
         let titles = [];
 
-        let pageNum = window.location.href.split('&');
+
+
 
         let data = {
             summ_page: 0,
@@ -18,7 +19,7 @@ class View {
             allSavinings: 0,
             startDate: getParamUrlVal('startDate'),
             endDate: getParamUrlVal('endDate'),
-            currentPage: (pageNum[pageNum.length - 1].indexOf('page') >= 0 ) ? pageNum[pageNum.length - 1] : 'page=1'
+            currentPage: `page=${getPageNum()}`
         };
 
         let thHtmlElements = document.querySelectorAll('.operations-table thead tr th');
